@@ -27,9 +27,7 @@ for _, lsp in pairs(servers) do
   })
 end
 
-local sumneko_binary_path = vim.fn.exepath("lua-language-server")
-local sumneko_root_path = vim.fn.fnamemodify(sumneko_binary_path, ":h:h:h")
-
+local lua_ls = vim.fn.exepath("lua-language-server")
 local runtime_path = vim.split(package.path, ";")
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
@@ -42,7 +40,7 @@ lspconfig.lua_ls.setup({
     client.server_capabilities.document_formatting = false
     client.server_capabilities.document_range_formatting = false
   end,
-  cmd = { sumneko_binary_path, "-E", sumneko_root_path .. "/main.lua" },
+  cmd = { lua_ls, "-E", vim.fn.fnamemodify(lua_ls, ":h:h:h") .. "/main.lua" },
   settings = {
     Lua = {
       runtime = {
@@ -54,6 +52,7 @@ lspconfig.lua_ls.setup({
       },
       workspace = {
         library = vim.api.nvim_get_runtime_file("", true),
+        checkThirdParty = false,
       },
       telemetry = {
         enable = false,
