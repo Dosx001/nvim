@@ -151,6 +151,7 @@ fun! g:NumList()
   endfor
 endfun
 
+colorscheme default
 hi Normal guifg=DarkGray
 hi Comment ctermfg=4 guifg=#0037da
 hi Constant ctermfg=1 guifg=#b30000
@@ -215,73 +216,6 @@ hi SpellBad term=reverse ctermfg=Black ctermbg=Red guifg=#000000 guibg=#e74856
 hi SpellCap term=reverse ctermfg=Black ctermbg=Blue guifg=#000000 guibg=#3b78ff
 hi SpellRare term=reverse ctermfg=Black ctermbg=Magenta guifg=#000000 guibg=#b4009e
 hi SpellLocal ctermfg=Black ctermbg=DarkCyan guifg=#000000 guibg=#3a96dd
-
-call plug#begin('~/.nvim')
-" My Suff
-Plug 'Dosx001/statusline.vim'
-Plug 'Dosx001/tabline.vim'
-" Plug 'Dosx001/vim-lazy'
-Plug 'Dosx001/vim-template'
-" Vim
-Plug 'christoomey/vim-sort-motion'
-Plug 'christoomey/vim-system-copy'
-Plug 'christoomey/vim-titlecase'
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-Plug 'mattn/emmet-vim'
-Plug 'tommcdo/vim-exchange'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-obsession'
-Plug 'justinmk/vim-sneak'
-" Text Object
-Plug 'kana/vim-textobj-user'
-Plug 'kana/vim-textobj-indent'
-Plug 'D4KU/vim-textobj-chainmember'
-Plug 'glts/vim-textobj-comment'
-" Nvim
-Plug 'lukas-reineke/indent-blankline.nvim'
-Plug 'lewis6991/gitsigns.nvim'
-Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
-Plug 'monaqa/dial.nvim'
-Plug 'numToStr/Comment.nvim'
-Plug 'anuvyklack/hydra.nvim'
-Plug 'NvChad/nvim-colorizer.lua'
-Plug 'L3MON4D3/LuaSnip'
-Plug 'rafamadriz/friendly-snippets'
-Plug 'gennaro-tedesco/nvim-peekup'
-Plug 'stevearc/dressing.nvim'
-" LSP
-Plug 'neovim/nvim-lspconfig'
-Plug 'weilbith/nvim-code-action-menu'
-Plug 'jose-elias-alvarez/null-ls.nvim'
-Plug 'mrshmllow/document-color.nvim'
-" Plug 'ray-x/lsp_signature.nvim'
-" Tree Sitter
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-treesitter/nvim-treesitter-textobjects'
-Plug 'nvim-treesitter/nvim-treesitter-context'
-Plug 'p00f/nvim-ts-rainbow'
-Plug 'jose-elias-alvarez/typescript.nvim'
-" Completion
-Plug 'hrsh7th/nvim-cmp'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-cmdline'
-Plug 'saadparwaiz1/cmp_luasnip'
-Plug 'rcarriga/cmp-dap'
-Plug 'uga-rosa/cmp-dictionary'
-" Debugger
-Plug 'mfussenegger/nvim-dap'
-Plug 'rcarriga/nvim-dap-ui'
-Plug 'theHamsta/nvim-dap-virtual-text'
-Plug 'mfussenegger/nvim-dap-python'
-" fzf
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
-call plug#end()
 
 lua require("init")
 
