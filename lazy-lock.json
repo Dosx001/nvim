@@ -36,6 +36,7 @@
   "plenary.nvim": { "branch": "master", "commit": "253d34830709d690f013daf2853a9d21ad7accab" },
   "statusline.vim": { "branch": "main", "commit": "673d5716f47a8bafdd93b052b969b45d2a6e44e6" },
   "tabline.vim": { "branch": "master", "commit": "d9f3218803d37adc8746a8c4103772de4bf0f3d4" },
+  "tailwindcss-colorizer-cmp.nvim": { "branch": "main", "commit": "f044050da3ec6e1cdb31985beecec6810cc27f0b" },
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "580b6c48651cabb63455e97d7e131ed557b8c7e2" },
   "telescope.nvim": { "branch": "master", "commit": "a3f17d3baf70df58b9d3544ea30abe52a7a832c2" },
   "typescript.nvim": { "branch": "main", "commit": "f66d4472606cb24615dfb7dbc6557e779d177624" },

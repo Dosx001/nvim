@@ -89,6 +89,7 @@ require("lazy").setup({
 			"saadparwaiz1/cmp_luasnip",
 			"rcarriga/cmp-dap",
 			"uga-rosa/cmp-dictionary",
+			"roobert/tailwindcss-colorizer-cmp.nvim",
 		},
 	},
 	{

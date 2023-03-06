@@ -35,6 +35,11 @@ cmp.setup({
 		{ name = "path" },
 		{ name = "dap" },
 	}),
+	formatting = {
+		format = function(entry, item)
+			return require("tailwindcss-colorizer-cmp").formatter(entry, item)
+		end,
+	},
 })
 
 cmp.setup.cmdline("/", {
