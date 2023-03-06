@@ -57,7 +57,6 @@ require("lazy").setup({
 	"stevearc/dressing.nvim",
 	{
 		"neovim/nvim-lspconfig",
-		build = ":TSUpdate",
 		dependencies = {
 			"weilbith/nvim-code-action-menu",
 			"jose-elias-alvarez/null-ls.nvim",
@@ -77,7 +76,6 @@ require("lazy").setup({
 	},
 	{
 		"hrsh7th/nvim-cmp",
-		build = ":TSUpdate",
 		dependencies = {
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-buffer",
@@ -90,7 +88,6 @@ require("lazy").setup({
 	},
 	{
 		"mfussenegger/nvim-dap",
-		build = ":TSUpdate",
 		dependencies = {
 			"rcarriga/nvim-dap-ui",
 			"theHamsta/nvim-dap-virtual-text",
@@ -99,7 +96,6 @@ require("lazy").setup({
 	},
 	{
 		"nvim-telescope/telescope.nvim",
-		build = ":TSUpdate",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
