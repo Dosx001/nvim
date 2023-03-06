@@ -21,7 +21,12 @@ require("lazy").setup({
 	"christoomey/vim-sort-motion",
 	"christoomey/vim-system-copy",
 	"christoomey/vim-titlecase",
-	"iamcco/markdown-preview.nvim", -- { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+	{
+		"iamcco/markdown-preview.nvim",
+		build = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	},
 	"mattn/emmet-vim",
 	"tommcdo/vim-exchange",
 	"tpope/vim-fugitive",
