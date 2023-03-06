@@ -100,10 +100,7 @@ ino <C-c> <C-x>s
 ino <C-f> <C-x><C-f>
 ino <C-h> <C-x><C-k>
 ino <expr><Esc> col('.') == 1 ? "\<Esc>" : "\<Esc>l"
-nno <F9> :PlugClean<CR>
-nno <F10> :PlugInstall<CR>
-nno <F11> :PlugUpdate<CR>
-nno <F12> :PlugUpgrade<CR>
+nno <F12> :Lazy<CR>
 nno <F5> :!<CR><CR>
 ino <F5> <Esc>:!<CR><CR>
 nno <C-p> $p
