@@ -1,6 +1,6 @@
 require("colorizer").setup({
-  filetypes = {
-    "*",
-    "!typescriptreact",
-  },
+	filetypes = {
+		"*",
+		"!typescriptreact",
+	},
 })
