@@ -66,8 +66,14 @@ require("lazy").setup({
 			"weilbith/nvim-code-action-menu",
 			"jose-elias-alvarez/null-ls.nvim",
 			"mrshmllow/document-color.nvim",
-			"jose-elias-alvarez/typescript.nvim",
-			-- "ray-x/lsp_signature.nvim",
+			{
+				"jose-elias-alvarez/typescript.nvim",
+				event = "BufEnter",
+				cond = function()
+					return vim.bo.filetype == "typescriptreact"
+				end,
+				config = true,
+			},
 		},
 	},
 	{
