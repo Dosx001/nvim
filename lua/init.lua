@@ -54,7 +54,6 @@ require("lazy").setup({
 	"lukas-reineke/indent-blankline.nvim",
 	"lewis6991/gitsigns.nvim",
 	"monaqa/dial.nvim",
-	"anuvyklack/hydra.nvim",
 	"NvChad/nvim-colorizer.lua",
 	"L3MON4D3/LuaSnip",
 	"rafamadriz/friendly-snippets",
@@ -115,12 +114,16 @@ require("lazy").setup({
 			{ "theHamsta/nvim-dap-virtual-text", config = true },
 			{
 				"mfussenegger/nvim-dap-python",
+				dependencies = {
+					"anuvyklack/hydra.nvim",
+				},
 				event = "BufEnter",
 				cond = function()
 					return vim.bo.filetype == "python"
 				end,
 				config = function()
 					require("dap-python").setup()
+					require("py-hydra")
 				end,
 			},
 		},
