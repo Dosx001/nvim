@@ -15,24 +15,33 @@ require("lazy").setup({
 	-- My Suff
 	"Dosx001/statusline.vim",
 	"Dosx001/tabline.vim",
-	-- "Dosx001/vim-lazy",
 	"Dosx001/vim-template",
 	-- Vim
 	"christoomey/vim-sort-motion",
 	"christoomey/vim-system-copy",
 	"christoomey/vim-titlecase",
-	{
-		"iamcco/markdown-preview.nvim",
-		build = function()
-			vim.fn["mkdp#util#install"]()
-		end,
-	},
-	"mattn/emmet-vim",
 	"tommcdo/vim-exchange",
 	"tpope/vim-fugitive",
 	"tpope/vim-repeat",
 	"tpope/vim-surround",
 	"justinmk/vim-sneak",
+	{
+		"mattn/emmet-vim",
+		event = "BufEnter",
+		cond = function()
+			return vim.bo.filetype == "hmtl" or vim.bo.filetype == "typescriptreact"
+		end,
+	},
+	{
+		"iamcco/markdown-preview.nvim",
+		build = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+		event = "BufEnter",
+		cond = function()
+			return vim.bo.filetype == "markdown"
+		end,
+	},
 	{
 		"kana/vim-textobj-user",
 		dependencies = {
@@ -44,6 +53,14 @@ require("lazy").setup({
 	-- Nvim
 	"lukas-reineke/indent-blankline.nvim",
 	"lewis6991/gitsigns.nvim",
+	"monaqa/dial.nvim",
+	"anuvyklack/hydra.nvim",
+	"NvChad/nvim-colorizer.lua",
+	"L3MON4D3/LuaSnip",
+	"rafamadriz/friendly-snippets",
+	"gennaro-tedesco/nvim-peekup",
+	"stevearc/dressing.nvim",
+	{ "numToStr/Comment.nvim", config = true },
 	{
 		"glacambre/firenvim",
 		cond = not not vim.g.started_by_firenvim,
@@ -52,16 +69,9 @@ require("lazy").setup({
 			vim.fn["firenvim#install"](0)
 		end,
 	},
-	"monaqa/dial.nvim",
-	"numToStr/Comment.nvim",
-	"anuvyklack/hydra.nvim",
-	"NvChad/nvim-colorizer.lua",
-	"L3MON4D3/LuaSnip",
-	"rafamadriz/friendly-snippets",
-	"gennaro-tedesco/nvim-peekup",
-	"stevearc/dressing.nvim",
 	{
 		"neovim/nvim-lspconfig",
+		priority = 1,
 		dependencies = {
 			"weilbith/nvim-code-action-menu",
 			"jose-elias-alvarez/null-ls.nvim",
@@ -92,9 +102,9 @@ require("lazy").setup({
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-cmdline",
-			"saadparwaiz1/cmp_luasnip",
 			"rcarriga/cmp-dap",
 			"uga-rosa/cmp-dictionary",
+			"saadparwaiz1/cmp_luasnip",
 			"roobert/tailwindcss-colorizer-cmp.nvim",
 		},
 	},
@@ -102,14 +112,24 @@ require("lazy").setup({
 		"mfussenegger/nvim-dap",
 		dependencies = {
 			"rcarriga/nvim-dap-ui",
-			"theHamsta/nvim-dap-virtual-text",
-			"mfussenegger/nvim-dap-python",
+			{ "theHamsta/nvim-dap-virtual-text", config = true },
+			{
+				"mfussenegger/nvim-dap-python",
+				event = "BufEnter",
+				cond = function()
+					return vim.bo.filetype == "python"
+				end,
+				config = function()
+					require("dap-python").setup()
+				end,
+			},
 		},
 	},
 	{
 		"nvim-telescope/telescope.nvim",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
+			{ "nvim-treesitter/playground", cond = false },
 			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		},
 	},

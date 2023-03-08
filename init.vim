@@ -100,6 +100,7 @@ ino <C-c> <C-x>s
 ino <C-f> <C-x><C-f>
 ino <C-h> <C-x><C-k>
 ino <expr><Esc> col('.') == 1 ? "\<Esc>" : "\<Esc>l"
+nno <F11> :Lazy! load 
 nno <F12> :Lazy<CR>
 nno <F5> :!<CR><CR>
 ino <F5> <Esc>:!<CR><CR>
@@ -275,7 +276,7 @@ hi IndentBlanklineIndent7 guifg=DarkMagenta gui=nocombine
 hi! link IndentBlanklineSpaceChar Title
 hi link @variable Normal
 " hi link @parameter Normal
-hi @parameter ctermfg=6 guifg=#e37d00
+" hi @parameter ctermfg=6 guifg=#e37d00
 
 " Nvim Complation
 hi CmpItemAbbrDeprecated gui=strikethrough guifg=DarkGray

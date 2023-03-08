@@ -1,5 +1,3 @@
-require("nvim-dap-virtual-text").setup({})
-require("dap-python").setup()
 local dap, dapui = require("dap"), require("dapui")
 
 dap.adapters.python = {
