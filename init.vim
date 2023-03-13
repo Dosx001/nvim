@@ -322,6 +322,7 @@ map <leader>zG <cmd>lua require('telescope.builtin').live_grep{ cwd = vim.fn.sys
 map <leader>zb <cmd>Telescope buffers<CR>
 map <leader>zh <cmd>Telescope help_tags<CR>
 map <leader>ze :e 
+map <leader>zE :Ex<CR>
 
 " DAP
 map <F1> <cmd>lua require("dap").step_into()<CR>
