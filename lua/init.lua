@@ -26,6 +26,17 @@ require("lazy").setup({
 	"tpope/vim-surround",
 	"justinmk/vim-sneak",
 	{
+		"Exafunction/codeium.vim",
+		config = function()
+			vim.keymap.set("i", "<M-Enter>", function()
+				return vim.fn["codeium#Accept"]()
+			end, { expr = true })
+			vim.keymap.set("i", "<M-x>", function()
+				return vim.fn["codeium#Clear"]()
+			end, { expr = true })
+		end,
+	},
+	{
 		"mattn/emmet-vim",
 		event = "BufEnter",
 		cond = function()
