@@ -252,7 +252,7 @@ map <A-[> <cmd>Gitsigns prev_hunk<CR>
 map <leader>g <cmd>Gitsigns preview_hunk<CR>
 
 " Fire Nvim
-map <F8> :set lines=10<CR>
+map <F9> :set lines=10<CR>
 if exists('g:started_by_firenvim')
   set filetype=markdown
 endif
