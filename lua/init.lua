@@ -40,7 +40,7 @@ require("lazy").setup({
 		"mattn/emmet-vim",
 		event = "BufEnter",
 		cond = function()
-			return vim.bo.filetype == "hmtl" or vim.bo.filetype == "typescriptreact"
+			return vim.bo.filetype == "html" or vim.bo.filetype == "typescriptreact"
 		end,
 	},
 	{
