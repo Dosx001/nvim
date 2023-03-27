@@ -90,7 +90,7 @@ require("lazy").setup({
 				"jose-elias-alvarez/typescript.nvim",
 				event = "BufEnter",
 				cond = function()
-					return vim.bo.filetype == "typescriptreact"
+					return vim.bo.filetype == "typescript" or vim.bo.filetype == "typescriptreact"
 				end,
 				config = true,
 			},
