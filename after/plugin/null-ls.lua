@@ -7,7 +7,7 @@ null_ls.setup({
 		actions.eslint_d,
 		actions.shellcheck,
 		actions.gitsigns,
-		actions.ltrs,
+		-- actions.ltrs,
 		-- actions.proselint,
 		diagnostics.ltrs,
 		diagnostics.cppcheck,
