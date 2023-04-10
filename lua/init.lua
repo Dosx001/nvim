@@ -78,7 +78,14 @@ require("lazy").setup({
 	"gennaro-tedesco/nvim-peekup",
 	"stevearc/dressing.nvim",
 	"nvim-tree/nvim-web-devicons",
-	{ "numToStr/Comment.nvim", config = true },
+	{
+		"numToStr/Comment.nvim",
+		config = function()
+			require("Comment").setup({
+				pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+			})
+		end,
+	},
 	{
 		"glacambre/firenvim",
 		cond = not not vim.g.started_by_firenvim,
@@ -128,6 +135,7 @@ require("lazy").setup({
 			"nvim-treesitter/nvim-treesitter-textobjects",
 			"nvim-treesitter/nvim-treesitter-context",
 			"mrjones2014/nvim-ts-rainbow",
+			"JoosepAlviste/nvim-ts-context-commentstring",
 		},
 	},
 	{
