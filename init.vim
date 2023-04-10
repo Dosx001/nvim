@@ -47,7 +47,6 @@ com Print execute "hardcopy > %.ps | !ps2pdf %.ps && rm %.ps"
 
 set timeoutlen=5000
 map <Space> <leader>
-map <leader>i ^
 map <leader>a $
 map <leader>c i<C-x>s
 map <leader>C :setlocal spell!<CR>
@@ -72,11 +71,10 @@ map <leader>U :earlier
 map <leader>, q:<Up>
 map <leader>. :<Up><CR>
 map <leader>> :<Up>
-map <leader>/ :noh<CR>
+map <leader>? :noh<CR>
 map <leader>0 :Source<CR>
 map <leader>9 <cmd>source ~/.config/nvim/snippets/python.lua<CR>
 map <leader>1 <cmd>set expandtab shiftwidth=4 tabstop=4 softtabstop=4<CR>
-map <leader>o yyp<C-a>f.lDA 
 ino <A-o> <Esc>yyp<C-a>f.2lDA
 map gF :tabe <cfile><CR>
 nno Y y$
@@ -271,8 +269,7 @@ hi IndentBlanklineIndent6 guifg=DarkBlue gui=nocombine
 hi IndentBlanklineIndent7 guifg=DarkMagenta gui=nocombine
 hi! link IndentBlanklineSpaceChar Title
 hi link @variable Normal
-" hi link @parameter Normal
-" hi @parameter ctermfg=6 guifg=#e37d00
+hi link @lsp.type.variable Normal
 
 " Nvim Complation
 hi CmpItemAbbrDeprecated gui=strikethrough guifg=DarkGray
@@ -296,19 +293,17 @@ set completeopt=menu,menuone,noselect
 map <A-}> <cmd>lua vim.diagnostic.goto_next()<CR>
 map <A-{> <cmd>lua vim.diagnostic.goto_prev()<CR>
 map <leader>f <cmd>CodeActionMenu<CR>
-map <leader>F <cmd>lua vim.diagnostic.open_float()<CR>
+map <leader>i <cmd>Lspsaga incoming_calls<CR>
+map <leader>I <cmd>Lspsaga outgoing_calls<CR>
+map <leader>F <cmd>Lspsaga show_line_diagnostics<CR>
 map <leader>e <cmd>lua vim.lsp.buf.format()<CR>
 map <leader>E <cmd>lua vim.lsp.buf.format{async = true}<CR>
-map <leader>h <cmd>lua vim.lsp.buf.hover()<CR>
+map <leader>h <cmd>Lspsaga hover_doc<CR>
+map <leader>p <cmd>Lspsaga peek_definition<CR>
+map <leader>P <cmd>Lspsaga peek_type_definition<CR>
+map <leader>o <cmd>Lspsaga outline<CR>
 map <leader>R <cmd>lua vim.lsp.buf.rename()<CR>
-map <leader>ld <cmd>lua vim.lsp.buf.definition()<CR>
-map <leader>lD <cmd>lua vim.lsp.buf.declaration()<CR>
-map <leader>li <cmd>lua vim.lsp.buf.implementation()<CR>
-map <leader>la <cmd>lua vim.lsp.buf.add_workspace_folder()<CR>
-map <leader>lr <cmd>lua vim.lsp.buf.reomve_workspace_folder()<CR>
-map <leader>ll <cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>
-map <leader>lR <cmd>lua vim.lsp.buf.references()<CR>
-map <leader>lt <cmd>lua vim.lsp.buf.type_definition()<CR>
+map <leader>/ <cmd>Lspsaga lsp_finder<CR>
 
 " Telescope
 map <leader>zf <cmd>Telescope find_files<CR>

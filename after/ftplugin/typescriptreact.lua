@@ -1,4 +1,4 @@
-vim.keymap.set("n", "<Leader>p", function()
+vim.keymap.set("n", "<A-t>", function()
 	vim.ui.select({
 		"Add Missing Imports",
 		"Organize Imports",

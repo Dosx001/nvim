@@ -77,6 +77,7 @@ require("lazy").setup({
 	"rafamadriz/friendly-snippets",
 	"gennaro-tedesco/nvim-peekup",
 	"stevearc/dressing.nvim",
+	"nvim-tree/nvim-web-devicons",
 	{ "numToStr/Comment.nvim", config = true },
 	{
 		"glacambre/firenvim",
@@ -84,6 +85,23 @@ require("lazy").setup({
 		build = function()
 			require("lazy").load({ plugins = "firenvim", wait = true })
 			vim.fn["firenvim#install"](0)
+		end,
+	},
+	{
+		"glepnir/lspsaga.nvim",
+		event = "LspAttach",
+		config = function()
+			require("lspsaga").setup({
+				lightbulb = {
+					enable = false,
+				},
+				symbol_in_winbar = {
+					enable = false,
+				},
+				outline = {
+					win_position = "left",
+				},
+			})
 		end,
 	},
 	{
