@@ -71,7 +71,7 @@ map <leader>U :earlier
 map <leader>, q:<Up>
 map <leader>. :<Up><CR>
 map <leader>> :<Up>
-map <leader>? :noh<CR>
+map <leader>/ :noh<CR>
 map <leader>0 :Source<CR>
 map <leader>9 <cmd>source ~/.config/nvim/snippets/python.lua<CR>
 map <leader>1 <cmd>set expandtab shiftwidth=4 tabstop=4 softtabstop=4<CR>
@@ -303,7 +303,7 @@ map <leader>p <cmd>Lspsaga peek_definition<CR>
 map <leader>P <cmd>Lspsaga peek_type_definition<CR>
 map <leader>o <cmd>Lspsaga outline<CR>
 map <leader>R <cmd>lua vim.lsp.buf.rename()<CR>
-map <leader>/ <cmd>Lspsaga lsp_finder<CR>
+map <leader>? <cmd>Lspsaga lsp_finder<CR>
 
 " Telescope
 map <leader>zf <cmd>Telescope find_files<CR>
