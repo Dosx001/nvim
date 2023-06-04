@@ -78,6 +78,7 @@ require("lazy").setup({
 	"gennaro-tedesco/nvim-peekup",
 	"stevearc/dressing.nvim",
 	"nvim-tree/nvim-web-devicons",
+	{ "stevearc/oil.nvim", config = true },
 	{
 		"numToStr/Comment.nvim",
 		config = function()

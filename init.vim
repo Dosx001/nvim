@@ -312,6 +312,7 @@ map <leader>zg <cmd>Telescope live_grep<CR>
 map <leader>zG <cmd>lua require('telescope.builtin').live_grep{ cwd = vim.fn.systemlist("git rev-parse --show-toplevel")[1] }<CR>
 map <leader>zb <cmd>Telescope buffers<CR>
 map <leader>zh <cmd>Telescope help_tags<CR>
+map <leader>zo <cmd>lua require("oil").open()<CR>
 map <leader>ze :e 
 map <leader>zE :Ex<CR>
 
