@@ -80,6 +80,15 @@ require("lazy").setup({
 	"nvim-tree/nvim-web-devicons",
 	{ "stevearc/oil.nvim", config = true },
 	{
+		"akinsho/toggleterm.nvim",
+		config = true,
+		event = "VeryLazy",
+		opts = {
+			open_mapping = [[<A-\>]],
+			direction = "float",
+		},
+	},
+	{
 		"numToStr/Comment.nvim",
 		config = function()
 			require("Comment").setup({
