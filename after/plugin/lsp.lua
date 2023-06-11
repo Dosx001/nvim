@@ -34,7 +34,7 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protoc
 capabilities.textDocument.colorProvider = {
 	dynamicRegistration = true,
 }
-for _, lsp in pairs({ "bashls", "clangd", "html", "jsonls", "prismals", "pyright", "tailwindcss", "tsserver" }) do
+for _, lsp in pairs({ "bashls", "clangd", "html", "jsonls", "prismals", "pyright", "tailwindcss", "tsserver", "vimls" }) do
 	require("lspconfig")[lsp].setup({
 		capabilities = capabilities,
 		on_attach = function(client)
