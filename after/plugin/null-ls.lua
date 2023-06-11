@@ -10,7 +10,9 @@ null_ls.setup({
 		-- actions.ltrs,
 		-- actions.proselint,
 		diagnostics.ltrs,
-		diagnostics.cppcheck,
+		diagnostics.cppcheck.with({
+			temp_dir = "/tmp",
+		}),
 		diagnostics.tidy,
 		-- diagnostics.stylelint,
 		diagnostics.pylint,
