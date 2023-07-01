@@ -21,6 +21,8 @@ set guicursor=a:ver25-blinkon0
 set termguicolors
 set list
 
+scriptencoding utf-8
+
 augroup Start
   au!
   au VimResized * wincmd =
@@ -33,7 +35,7 @@ augroup END
 fun! g:CenterCursor()
   let i = line('$') - line('.')
   if i < 30
-    execute "set scrolloff=" . i
+    execute 'set scrolloff=' . i
   else
     set scrolloff=999
   endif
@@ -115,13 +117,13 @@ ino <C-k> <Esc>:call CtrlK()<CR>
 
 fun! g:CtrlK()
   let ft = expand('%:e')
-  if ft == "py"
-    execute "Py"
-  elseif ft =~ 'html\|jsx\|tsx'
+  if ft ==? 'py'
+    execute 'Py'
+  elseif ft =~? 'html\|jsx\|tsx'
     call cursor(line('.'), len(getline('.')))
-    call emmet#expandAbbr(3,"")
-  elseif ft == "ts"
-    execute "wa | !clear; tsc"
+    call emmet#expandAbbr(3,'')
+  elseif ft ==? 'ts'
+    execute 'wa | !clear; tsc'
   endif
 endfun
 
@@ -141,7 +143,7 @@ fun! g:NumList()
     let ran[1] = opt[1]
     let ran[2] = opt[2]
   endif
-  norm 0D
+  execute 'normal! 0D'
   for i in range(ran[0], ran[1], ran[2])
     put = i . args[1]
   endfor
@@ -237,7 +239,7 @@ let g:surround_{115} = "~~\r~~" " s
 if system('uname -r | grep WSL')
   let g:system_copy#copy_command='/mnt/c/Windows/System32/clip.exe'
   let g:system_copy#paste_command='powershell.exe -NoProfile -command Get-Clipboard'
-  let g:netrw_browsex_viewer="cmd.exe /C start"
+  let g:netrw_browsex_viewer='cmd.exe /C start'
 endif
 
 " Git Signs
