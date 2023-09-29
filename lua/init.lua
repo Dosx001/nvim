@@ -45,20 +45,14 @@ require("lazy").setup({
 	},
 	{
 		"mattn/emmet-vim",
-		event = "BufEnter",
-		cond = function()
-			return vim.bo.filetype == "html" or vim.bo.filetype == "typescriptreact"
-		end,
+		ft = { "html", "typescriptreact" },
 	},
 	{
 		"iamcco/markdown-preview.nvim",
 		build = function()
 			vim.fn["mkdp#util#install"]()
 		end,
-		event = "BufEnter",
-		cond = function()
-			return vim.bo.filetype == "markdown"
-		end,
+		ft = "markdown",
 	},
 	{
 		"kana/vim-textobj-user",
@@ -99,9 +93,8 @@ require("lazy").setup({
 	},
 	{
 		"glacambre/firenvim",
-		cond = not not vim.g.started_by_firenvim,
+		lazy = not vim.g.started_by_firenvim,
 		build = function()
-			require("lazy").load({ plugins = { "firenvim" }, wait = true })
 			vim.fn["firenvim#install"](0)
 		end,
 	},
@@ -129,15 +122,12 @@ require("lazy").setup({
 			"weilbith/nvim-code-action-menu",
 			"jose-elias-alvarez/null-ls.nvim",
 			"mrshmllow/document-color.nvim",
-			{
-				"jose-elias-alvarez/typescript.nvim",
-				event = "BufEnter",
-				cond = function()
-					return vim.bo.filetype == "typescript" or vim.bo.filetype == "typescriptreact"
-				end,
-				config = true,
-			},
 		},
+	},
+	{
+		"jose-elias-alvarez/typescript.nvim",
+		ft = { "typescript", "typescriptreact" },
+		config = true,
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
@@ -167,21 +157,18 @@ require("lazy").setup({
 		dependencies = {
 			"rcarriga/nvim-dap-ui",
 			{ "theHamsta/nvim-dap-virtual-text", config = true },
-			{
-				"mfussenegger/nvim-dap-python",
-				dependencies = {
-					"anuvyklack/hydra.nvim",
-				},
-				event = "BufEnter",
-				cond = function()
-					return vim.bo.filetype == "python"
-				end,
-				config = function()
-					require("dap-python").setup()
-					require("py-hydra")
-				end,
-			},
 		},
+	},
+	{
+		"mfussenegger/nvim-dap-python",
+		dependencies = {
+			"anuvyklack/hydra.nvim",
+		},
+		ft = "python",
+		config = function()
+			require("dap-python").setup()
+			require("py-hydra")
+		end,
 	},
 	{
 		"nvim-telescope/telescope.nvim",
