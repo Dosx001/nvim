@@ -262,14 +262,6 @@ nmap  <A-a>  <Plug>(dial-increment)
 vmap  <A-a>  <Plug>(dial-increment)
 
 " Nvim TS Rainbow
-hi IndentBlanklineIndent1 guifg=DarkRed gui=nocombine
-hi IndentBlanklineIndent2 guifg=#974300 gui=nocombine
-hi IndentBlanklineIndent3 guifg=#828200 gui=nocombine
-hi IndentBlanklineIndent4 guifg=DarkGreen gui=nocombine
-hi IndentBlanklineIndent5 guifg=DarkCyan gui=nocombine
-hi IndentBlanklineIndent6 guifg=DarkBlue gui=nocombine
-hi IndentBlanklineIndent7 guifg=DarkMagenta gui=nocombine
-hi! link IndentBlanklineSpaceChar Title
 hi link @variable Normal
 hi link @lsp.type.variable Normal
 

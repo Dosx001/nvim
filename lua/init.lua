@@ -63,7 +63,7 @@ require("lazy").setup({
 		},
 	},
 	-- Nvim
-	"lukas-reineke/indent-blankline.nvim",
+	{ "lukas-reineke/indent-blankline.nvim", main = "ibl" },
 	"lewis6991/gitsigns.nvim",
 	"monaqa/dial.nvim",
 	"NvChad/nvim-colorizer.lua",
