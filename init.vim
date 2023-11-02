@@ -291,6 +291,7 @@ map <leader>i <cmd>Lspsaga incoming_calls<CR>
 map <leader>I <cmd>Lspsaga outgoing_calls<CR>
 map <leader>F <cmd>Lspsaga show_line_diagnostics<CR>
 map <leader>e <cmd>lua vim.lsp.buf.format()<CR>
+vmap e <cmd>lua vim.lsp.buf.format(bufopts)<CR><Esc>
 map <leader>E <cmd>lua vim.lsp.buf.format{async = true}<CR>
 map <leader>h <cmd>Lspsaga hover_doc<CR>
 map <leader>p <cmd>Lspsaga peek_definition<CR>
