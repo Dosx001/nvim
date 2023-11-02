@@ -298,7 +298,7 @@ map <leader>p <cmd>Lspsaga peek_definition<CR>
 map <leader>P <cmd>Lspsaga peek_type_definition<CR>
 map <leader>o <cmd>Lspsaga outline<CR>
 map <leader>R <cmd>lua vim.lsp.buf.rename()<CR>
-map <leader>? <cmd>Lspsaga lsp_finder<CR>
+map <leader>? <cmd>Lspsaga finder<CR>
 
 " Telescope
 map <leader>zf <cmd>Telescope find_files<CR>

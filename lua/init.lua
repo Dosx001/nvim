@@ -110,6 +110,7 @@ require("lazy").setup({
 					enable = false,
 				},
 				outline = {
+					auto_preview = false,
 					win_position = "left",
 				},
 			})
