@@ -75,15 +75,6 @@ require("lazy").setup({
 	"rcarriga/nvim-notify",
 	{ "stevearc/oil.nvim", config = true },
 	{
-		"akinsho/toggleterm.nvim",
-		config = true,
-		event = "VeryLazy",
-		opts = {
-			open_mapping = [[<A-\>]],
-			direction = "float",
-		},
-	},
-	{
 		"numToStr/Comment.nvim",
 		config = function()
 			require("Comment").setup({
@@ -102,6 +93,7 @@ require("lazy").setup({
 		"glepnir/lspsaga.nvim",
 		event = "LspAttach",
 		config = function()
+			vim.keymap.set({ "n", "t" }, "<A-\\>", "<cmd>Lspsaga term_toggle<CR>")
 			require("lspsaga").setup({
 				lightbulb = {
 					enable = false,
