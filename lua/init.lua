@@ -73,6 +73,7 @@ require("lazy").setup({
 	"stevearc/dressing.nvim",
 	"nvim-tree/nvim-web-devicons",
 	"rcarriga/nvim-notify",
+	{ "folke/neodev.nvim", config = true, ft = "lua" },
 	{ "stevearc/oil.nvim", config = true },
 	{
 		"numToStr/Comment.nvim",
