@@ -12,8 +12,8 @@ vim.g.rainbow_delimiters = {
 		"RainbowOrange",
 		"RainbowYellow",
 		"RainbowGreen",
-		"RainbowBlue",
 		"RainbowCyan",
+		"RainbowBlue",
 		"RainbowMagenta",
 	},
 }
