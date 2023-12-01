@@ -57,10 +57,12 @@ local lspconfig = require("lspconfig")
 
 lspconfig.lua_ls.setup({
 	capabilities = capabilities,
-	on_attach = disalbeFormatting,
 	cmd = { lua_ls, "-E", vim.fn.fnamemodify(lua_ls, ":h:h:h") .. "/main.lua" },
 	settings = {
 		Lua = {
+			format = {
+				enable = false,
+			},
 			runtime = {
 				version = "LuaJIT",
 				path = runtime_path,
