@@ -7,13 +7,13 @@ vim.api.nvim_set_hl(0, "RainbowBlue", { fg = "Blue" })
 vim.api.nvim_set_hl(0, "RainbowMagenta", { fg = "#b300b3" })
 
 vim.g.rainbow_delimiters = {
-	highlight = {
-		"RainbowRed",
-		"RainbowOrange",
-		"RainbowYellow",
-		"RainbowGreen",
-		"RainbowCyan",
-		"RainbowBlue",
-		"RainbowMagenta",
-	},
+  highlight = {
+    "RainbowRed",
+    "RainbowOrange",
+    "RainbowYellow",
+    "RainbowGreen",
+    "RainbowCyan",
+    "RainbowBlue",
+    "RainbowMagenta",
+  },
 }
