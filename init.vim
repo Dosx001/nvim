@@ -172,6 +172,7 @@ hi MsgArea guifg=#efefef
 hi IncSearch gui=reverse,underline guifg=none guibg=none
 hi Search term=reverse cterm=reverse gui=reverse guifg=none guibg=none
 hi Title ctermfg=225 gui=none guifg=Magenta
+hi! link TerminalNormal Normal
 
 hi DiffAdd ctermbg=22 gui=none guifg=Black guibg=#005f00
 hi DiffChange ctermbg=3 gui=none guifg=Black guibg=#c19c00
