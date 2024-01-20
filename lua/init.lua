@@ -114,7 +114,7 @@ require("lazy").setup({
     priority = 1,
     dependencies = {
       "weilbith/nvim-code-action-menu",
-      "jose-elias-alvarez/null-ls.nvim",
+      "nvimtools/none-ls.nvim",
       "mrshmllow/document-color.nvim",
     },
   },
