@@ -68,10 +68,8 @@ cmp.setup.cmdline(":", {
   }),
 })
 
-require("cmp_dictionary").switcher({
-  spelllang = {
-    en_us = "~/en.dict",
-  },
+require("cmp_dictionary").setup({
+  paths = { "~/en.dict" },
 })
 
 -- cmp.setup.filetype("gitcommit", {
