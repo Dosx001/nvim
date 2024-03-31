@@ -291,10 +291,12 @@ map <leader>f <cmd>CodeActionMenu<CR>
 map <leader>i <cmd>Lspsaga incoming_calls<CR>
 map <leader>I <cmd>Lspsaga outgoing_calls<CR>
 map <leader>F <cmd>Lspsaga show_line_diagnostics<CR>
+map <C-f> <cmd>lua vim.diagnostic.open_float()<CR>
 map <leader>e <cmd>lua vim.lsp.buf.format()<CR>
 vmap e <cmd>lua vim.lsp.buf.format(bufopts)<CR><Esc>
 map <leader>E <cmd>lua vim.lsp.buf.format{async = true}<CR>
 map <leader>h <cmd>Lspsaga hover_doc<CR>
+map <leader>H <cmd>lua vim.lsp.buf.hover()<CR>
 map <leader>p <cmd>Lspsaga peek_definition<CR>
 map <leader>P <cmd>Lspsaga peek_type_definition<CR>
 map <leader>o <cmd>Lspsaga outline<CR>
@@ -308,6 +310,7 @@ map <leader>zg <cmd>Telescope live_grep<CR>
 map <leader>zG <cmd>lua require('telescope.builtin').live_grep{ cwd = vim.fn.systemlist("git rev-parse --show-toplevel")[1] }<CR>
 map <leader>zb <cmd>Telescope buffers<CR>
 map <leader>zh <cmd>Telescope help_tags<CR>
+map <leader>zs <cmd>Telescope git_status<CR>
 map <leader>zo <cmd>lua require("oil").open()<CR>
 map <leader>ze :e 
 map <leader>zE :Ex<CR>
