@@ -98,6 +98,7 @@ require("lazy").setup({
     dependencies = {
       "weilbith/nvim-code-action-menu",
       "nvimtools/none-ls.nvim",
+      "nvimtools/none-ls-extras.nvim",
       "mrshmllow/document-color.nvim",
     },
   },
