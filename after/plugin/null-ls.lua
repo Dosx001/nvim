@@ -31,3 +31,9 @@ null_ls.setup({
     require("none-ls.formatting.rustfmt"),
   },
 })
+
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(args)
+    vim.bo[args.buf].formatexpr = nil
+  end,
+})
