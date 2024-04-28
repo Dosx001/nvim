@@ -151,70 +151,70 @@ endfun
 
 colorscheme default
 hi Normal guifg=DarkGray
-hi Comment ctermfg=4 guifg=#0037da
-hi Constant ctermfg=1 guifg=#b30000
-hi Special ctermfg=5 guifg=#881798
-hi Identifier ctermfg=6 guifg=#3a96dd
-" hi Function ctermfg=6 guifg=#e37d00
-hi Statement ctermfg=130 gui=none guifg=#af5f00
-hi PreProc ctermfg=5 guifg=#b3b300
-hi Type ctermfg=2 gui=none guifg=#13a10e
-hi Underlined term=underline cterm=underline ctermfg=5 gui=underline guifg=#881798
+hi Comment guifg=#0037da
+hi Constant guifg=#b30000
+hi Special guifg=#881798
+hi Identifier guifg=#3a96dd
+" hi Function guifg=#e37d00
+hi Statement gui=none guifg=#af5f00
+hi PreProc guifg=#b3b300
+hi Type gui=none guifg=#13a10e
+" hi Underlined gui=underline
 
-hi Visual ctermbg=235 guibg=#242424
-hi VertSplit ctermfg=DarkRed ctermbg=237 guibg=#363636 guifg=#b30000
-hi EndOfBuffer ctermfg=237 guifg=#363636 guibg=none
-hi Pmenu ctermfg=1 ctermbg=Black guifg=#b30000 guibg=#0c0c0c
+hi Visual guibg=#242424
+hi VertSplit guibg=#363636 guifg=#b30000
+hi EndOfBuffer guifg=#363636 guibg=none
+hi Pmenu guifg=#b30000 guibg=#0c0c0c
 hi! link PmenuSel Visual
-hi PmenuSbar ctermbg=248 guibg=Grey
-hi PmenuThumb ctermbg=0 guibg=DarkRed
+hi PmenuSbar guibg=Grey
+hi PmenuThumb guibg=DarkRed
 hi MsgArea guifg=#efefef
 hi IncSearch gui=reverse,underline guifg=none guibg=none
-hi Search term=reverse cterm=reverse gui=reverse guifg=none guibg=none
-hi Title ctermfg=225 gui=none guifg=Magenta
+hi Search gui=reverse guifg=none guibg=none
+hi Title gui=none guifg=Magenta
 hi! link TerminalNormal Normal
 
-hi DiffAdd ctermbg=22 gui=none guifg=Black guibg=#005f00
-hi DiffChange ctermbg=3 gui=none guifg=Black guibg=#c19c00
-hi DiffDelete ctermbg=88 gui=none guifg=Black guibg=#870000
-hi DiffText term=reverse ctermbg=53 gui=none guifg=Black guibg=#5f005f
+hi DiffAdd gui=none guifg=Black guibg=#005f00
+hi DiffChange gui=none guifg=Black guibg=#c19c00
+hi DiffDelete gui=none guifg=Black guibg=#870000
+hi DiffText gui=none guifg=Black guibg=#5f005f
 
 "set wildmenu
-"hi WildMenu ctermfg=34 ctermbg=black
+"hi WildMenu ctermbg=black
 
 set showtabline=2
-hi TabLine ctermfg=DarkRed ctermbg=234 gui=none guifg=#b30000 guibg=#1a1a1a
-hi TabLineSel ctermfg=196 guifg=#ef0000 guibg=none
-hi TabLineFill ctermfg=233 guifg=#111111
+hi TabLine gui=none guifg=#b30000 guibg=#1a1a1a
+hi TabLineSel guifg=#ef0000 guibg=none
+hi TabLineFill guifg=#111111
 
 set number relativenumber
-hi LineNr ctermfg=DarkRed ctermbg=234 guifg=#b30000 guibg=#1a1a1a
+hi LineNr guifg=#b30000 guibg=#1a1a1a
 
 set colorcolumn=100
 hi! link ColorColumn Visual
 
 set cursorline
 hi! link CursorLine Visual
-hi CursorLineNR ctermbg=7 gui=none guifg=#a45900 guibg=#b3b3b3
+hi CursorLineNR gui=none guifg=#a45900 guibg=#b3b3b3
 
 "set cursorcolumn
 "hi CursorColumn ctermbg=17
 
 set signcolumn=yes
-hi SignColumn ctermbg=none guibg=none
+hi SignColumn guibg=none
 
 set listchars=tab:┆\ ,trail:•,extends:>,precedes:<,nbsp:~ ",eol:π
 hi! link NonText Title
-hi SpecialKey ctermfg=DarkRed guifg=#b30000
-hi ExtendsChar ctermfg=DarkRed ctermbg=237 guifg=#b30000 guibg=#363636
-hi PrecedesChar ctermfg=DarkRed ctermbg=237 guifg=#b30000 guibg=#363636
-hi TrailChar ctermfg=DarkRed ctermbg=237 guifg=#b30000 guibg=#363636
+hi SpecialKey guifg=#b30000
+hi ExtendsChar guifg=#b30000 guibg=#363636
+hi PrecedesChar guifg=#b30000 guibg=#363636
+hi TrailChar guifg=#b30000 guibg=#363636
 
 set spelllang=en_us
-hi SpellBad term=reverse ctermfg=Black ctermbg=Red guifg=#000000 guibg=#e74856
-hi SpellCap term=reverse ctermfg=Black ctermbg=Blue guifg=#000000 guibg=#3b78ff
-hi SpellRare term=reverse ctermfg=Black ctermbg=Magenta guifg=#000000 guibg=#b4009e
-hi SpellLocal ctermfg=Black ctermbg=DarkCyan guifg=#000000 guibg=#3a96dd
+hi SpellBad guifg=#000000 guibg=#e74856
+hi SpellCap guifg=#000000 guibg=#3b78ff
+hi SpellRare guifg=#000000 guibg=#b4009e
+hi SpellLocal guifg=#000000 guibg=#3a96dd
 
 lua require("init")
 
@@ -244,10 +244,10 @@ if system('uname -r | grep WSL')
 endif
 
 " Git Signs
-hi GitSignsAdd ctermfg=green ctermbg=235 guifg=#3cef3c guibg=#242424
-hi GitSignsChange ctermfg=226 ctermbg=235 guifg=#efef00 guibg=#242424
-hi GitSignsDelete ctermfg=darkred ctermbg=235 guifg=#b30000 guibg=#242424
-hi GitSignsChangeDelete ctermfg=202 ctermbg=235 guifg=#ef5900 guibg=#242424
+hi GitSignsAdd guifg=#3cef3c guibg=#242424
+hi GitSignsChange guifg=#efef00 guibg=#242424
+hi GitSignsDelete guifg=#b30000 guibg=#242424
+hi GitSignsChangeDelete guifg=#ef5900 guibg=#242424
 map <A-]> <cmd>Gitsigns next_hunk<CR>
 map <A-[> <cmd>Gitsigns prev_hunk<CR>
 map <leader>g <cmd>Gitsigns preview_hunk<CR>
