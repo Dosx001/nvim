@@ -287,7 +287,7 @@ hi link CmpItemKindSnippet Title
 set completeopt=menu,menuone,noselect
 map <A-}> <cmd>lua vim.diagnostic.goto_next()<CR>
 map <A-{> <cmd>lua vim.diagnostic.goto_prev()<CR>
-map <leader>f <cmd>CodeActionMenu<CR>
+map <leader>f <cmd>Lspsaga code_action<CR>
 map <leader>i <cmd>Lspsaga incoming_calls<CR>
 map <leader>I <cmd>Lspsaga outgoing_calls<CR>
 map <leader>F <cmd>Lspsaga show_line_diagnostics<CR>

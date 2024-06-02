@@ -79,6 +79,13 @@ require("lazy").setup({
     config = function()
       vim.keymap.set({ "n", "t" }, "<A-\\>", "<cmd>Lspsaga term_toggle<CR>")
       require("lspsaga").setup({
+        code_action = {
+          show_server_name = true,
+          extents_gitsigns = true,
+          keys = {
+            quit = "<Esc>",
+          },
+        },
         lightbulb = {
           enable = false,
         },
@@ -96,7 +103,6 @@ require("lazy").setup({
     "neovim/nvim-lspconfig",
     priority = 1,
     dependencies = {
-      "weilbith/nvim-code-action-menu",
       "nvimtools/none-ls.nvim",
       "nvimtools/none-ls-extras.nvim",
       "mrshmllow/document-color.nvim",
