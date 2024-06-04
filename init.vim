@@ -149,7 +149,7 @@ fun! g:NumList()
   endfor
 endfun
 
-colorscheme default
+colorscheme vim
 hi Normal guifg=DarkGray
 hi Comment guifg=#0037da
 hi Constant guifg=#b30000
@@ -161,7 +161,7 @@ hi PreProc guifg=#b3b300
 hi Type gui=none guifg=#13a10e
 " hi Underlined gui=underline
 
-hi Visual guibg=#242424
+hi Visual guifg=none guibg=#242424
 hi VertSplit guibg=#363636 guifg=#b30000
 hi EndOfBuffer guifg=#363636 guibg=none
 hi Pmenu guifg=#b30000 guibg=#0c0c0c
@@ -172,7 +172,10 @@ hi MsgArea guifg=#efefef
 hi IncSearch gui=reverse,underline guifg=none guibg=none
 hi Search gui=reverse guifg=none guibg=none
 hi Title gui=none guifg=Magenta
+hi NonText gui=italic guifg=#0037da guibg=none
+hi! link Folded Visual
 hi! link TerminalNormal Normal
+hi! link @type.builtin Type
 
 hi DiffAdd gui=none guifg=Black guibg=#005f00
 hi DiffChange gui=none guifg=Black guibg=#c19c00
@@ -194,7 +197,7 @@ set colorcolumn=100
 hi! link ColorColumn Visual
 
 set cursorline
-hi! link CursorLine Visual
+hi CursorLine guibg=#242424
 hi CursorLineNR gui=none guifg=#a45900 guibg=#b3b3b3
 
 "set cursorcolumn
@@ -204,7 +207,6 @@ set signcolumn=yes
 hi SignColumn guibg=none
 
 set listchars=tab:┆\ ,trail:•,extends:>,precedes:<,nbsp:~ ",eol:π
-hi! link NonText Title
 hi SpecialKey guifg=#b30000
 hi ExtendsChar guifg=#b30000 guibg=#363636
 hi PrecedesChar guifg=#b30000 guibg=#363636
