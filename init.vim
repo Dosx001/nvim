@@ -250,6 +250,11 @@ hi GitSignsAdd guifg=#3cef3c guibg=#242424
 hi GitSignsChange guifg=#efef00 guibg=#242424
 hi GitSignsDelete guifg=#b30000 guibg=#242424
 hi GitSignsChangeDelete guifg=#ef5900 guibg=#242424
+hi GitSignsStagedAdd guifg=#3cef3c guibg=#1a1a1a
+hi GitSignsStagedChange guifg=#efef00 guibg=#1a1a1a
+hi GitSignsStagedDelete guifg=#b30000 guibg=#1a1a1a
+hi GitSignsStagedChangedelete guifg=#b30000 guibg=#1a1a1a
+hi GitSignsStagedTopdelete guifg=#b30000 guibg=#1a1a1a
 map <A-]> <cmd>Gitsigns next_hunk<CR>
 map <A-[> <cmd>Gitsigns prev_hunk<CR>
 map <leader>g <cmd>Gitsigns preview_hunk<CR>
