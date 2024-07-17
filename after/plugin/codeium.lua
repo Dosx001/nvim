@@ -43,8 +43,6 @@ vim.keymap.set("i", "<M-o>", function()
     vim.defer_fn(function()
       vim.api.nvim_set_current_line(line:sub(0, cursor[2]) .. text .. line:sub(cursor[2] + 1))
       vim.api.nvim_win_set_cursor(0, { cursor[1], cursor[2] + #text })
-      print("pre enter " .. vim.inspect(cursor))
-      vim.api.nvim_feedkeys("\n", "i", true)
     end, 0)
   end
 end, { expr = true })
