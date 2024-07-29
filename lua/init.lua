@@ -106,12 +106,12 @@ require("lazy").setup({
       "nvimtools/none-ls.nvim",
       "nvimtools/none-ls-extras.nvim",
       "mrshmllow/document-color.nvim",
+      {
+        "jose-elias-alvarez/typescript.nvim",
+        ft = { "typescript", "typescriptreact" },
+        config = true,
+      },
     },
-  },
-  {
-    "jose-elias-alvarez/typescript.nvim",
-    ft = { "typescript", "typescriptreact" },
-    config = true,
   },
   {
     "nvim-treesitter/nvim-treesitter",

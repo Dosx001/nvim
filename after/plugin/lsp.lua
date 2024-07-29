@@ -34,11 +34,11 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protoc
 capabilities.textDocument.colorProvider = {
   dynamicRegistration = true,
 }
-for _, lsp in pairs({ "bashls", "clangd", "html", "jsonls", "prismals", "pyright", "tailwindcss", "tsserver", "vimls" }) do
+for _, lsp in pairs({ "bashls", "clangd", "html", "jsonls", "prismals", "pyright", "tailwindcss", "vimls" }) do
   require("lspconfig")[lsp].setup({
     capabilities = capabilities,
     on_attach = function(client)
-      if contain({ "html", "jsonls", "tsserver" }, client.name) then
+      if contain({ "html", "jsonls" }, client.name) then
         disalbeFormatting(client)
       end
       if client.server_capabilities.colorProvider then
@@ -84,6 +84,23 @@ lspconfig.cssls.setup({
       lint = {
         unknownAtRules = "ignore",
       },
+    },
+  },
+})
+
+lspconfig.tsserver.setup({
+  capabilities = capabilities,
+  on_attach = disalbeFormatting,
+  init_options = {
+    preferences = {
+      includeInlayParameterNameHints = "all",
+      includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+      includeInlayFunctionParameterTypeHints = true,
+      includeInlayVariableTypeHints = true,
+      includeInlayPropertyDeclarationTypeHints = true,
+      includeInlayFunctionLikeReturnTypeHints = true,
+      includeInlayEnumMemberValueHints = true,
+      importModuleSpecifierPreference = "non-relative",
     },
   },
 })

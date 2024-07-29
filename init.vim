@@ -302,8 +302,7 @@ map <C-f> <cmd>lua vim.diagnostic.open_float()<CR>
 map <leader>e <cmd>lua vim.lsp.buf.format()<CR>
 vmap e <cmd>lua vim.lsp.buf.format(bufopts)<CR><Esc>
 map <leader>E <cmd>lua vim.lsp.buf.format{async = true}<CR>
-map <leader>h <cmd>Lspsaga hover_doc<CR>
-map <leader>H <cmd>lua vim.lsp.buf.hover()<CR>
+map <leader>h <cmd>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<CR>
 map <leader>p <cmd>Lspsaga peek_definition<CR>
 map <leader>P <cmd>Lspsaga peek_type_definition<CR>
 map <leader>o <cmd>Lspsaga outline<CR>
