@@ -14,6 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   checker = { enabled = false },
   spec = {
+    { import = "plugins" },
     -- My Suff
     "Dosx001/statusline.vim",
     "Dosx001/tabline.vim",
@@ -108,11 +109,6 @@ require("lazy").setup({
         "nvimtools/none-ls.nvim",
         "nvimtools/none-ls-extras.nvim",
         "mrshmllow/document-color.nvim",
-        {
-          "jose-elias-alvarez/typescript.nvim",
-          ft = { "typescript", "typescriptreact" },
-          config = true,
-        },
       },
     },
     {

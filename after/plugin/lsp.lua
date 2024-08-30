@@ -88,23 +88,6 @@ lspconfig.cssls.setup({
   },
 })
 
-lspconfig.tsserver.setup({
-  capabilities = capabilities,
-  on_attach = disalbeFormatting,
-  init_options = {
-    preferences = {
-      includeInlayParameterNameHints = "all",
-      includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-      includeInlayFunctionParameterTypeHints = true,
-      includeInlayVariableTypeHints = true,
-      includeInlayPropertyDeclarationTypeHints = true,
-      includeInlayFunctionLikeReturnTypeHints = true,
-      includeInlayEnumMemberValueHints = true,
-      importModuleSpecifierPreference = "non-relative",
-    },
-  },
-})
-
 lspconfig.rust_analyzer.setup({
   capabilities = capabilities,
   on_attach = disalbeFormatting,
