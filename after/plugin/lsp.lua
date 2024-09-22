@@ -34,7 +34,19 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protoc
 capabilities.textDocument.colorProvider = {
   dynamicRegistration = true,
 }
-for _, lsp in pairs({ "bashls", "clangd", "html", "jsonls", "prismals", "pyright", "tailwindcss", "vimls" }) do
+
+for _, lsp in pairs({
+  "bashls",
+  "clangd",
+  "eslint",
+  "html",
+  "jsonls",
+  "prismals",
+  "pyright",
+  "tailwindcss",
+  "vimls",
+  "zls",
+}) do
   require("lspconfig")[lsp].setup({
     capabilities = capabilities,
     on_attach = function(client)
@@ -113,7 +125,7 @@ lspconfig.rust_analyzer.setup({
   },
 })
 
-for type, icon in pairs({ Error = " ", Warn = " ", Hint = " ", Info = " " }) do
+for type, icon in pairs({ Error = " ", Warn = " ", Hint = " ", Info = " " }) do
   local hl = "DiagnosticSign" .. type
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
