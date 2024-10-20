@@ -60,7 +60,16 @@ require("lazy").setup({
     "nvim-tree/nvim-web-devicons",
     "rcarriga/nvim-notify",
     { "folke/neodev.nvim", config = true, ft = "lua" },
-    { "stevearc/oil.nvim", config = true },
+    {
+      "stevearc/oil.nvim",
+      config = function()
+        require("oil").setup({
+          view_options = {
+            show_hidden = true,
+          },
+        })
+      end,
+    },
     {
       "numToStr/Comment.nvim",
       config = function()
