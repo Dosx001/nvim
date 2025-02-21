@@ -91,6 +91,9 @@ lspconfig.lua_ls.setup({
 
 lspconfig.cssls.setup({
   capabilities = capabilities,
+  init_options = {
+    provideFormatter = false,
+  },
   settings = {
     scss = {
       lint = {
