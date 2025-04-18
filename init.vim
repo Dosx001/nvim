@@ -188,7 +188,7 @@ hi DiffText gui=none guifg=Black guibg=#5f005f
 set showtabline=2
 hi TabLine gui=none guifg=#b30000 guibg=#1a1a1a
 hi TabLineSel guifg=#ef0000 guibg=none
-hi TabLineFill guifg=#111111
+hi TabLineFill gui=none guifg=#111111
 
 set number relativenumber
 hi LineNr guifg=#b30000 guibg=#1a1a1a
