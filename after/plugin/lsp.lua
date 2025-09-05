@@ -31,7 +31,7 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
 end
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
-capabilities.textDocument.colorProvider = {
+capabilities.textDocument.documentColor = {
   dynamicRegistration = true,
 }
 
@@ -66,6 +66,11 @@ table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
 local lspconfig = require("lspconfig")
+
+lspconfig.clangd.setup({
+  capabilities = capabilities,
+  filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
+})
 
 lspconfig.lua_ls.setup({
   capabilities = capabilities,

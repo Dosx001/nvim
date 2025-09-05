@@ -2,7 +2,7 @@ require("nvim-treesitter.configs").setup({
   ensure_installed = "all",
   highlight = {
     enable = true,
-    disable = { "vim" },
+    disable = { "dockerfile", "vim" },
     custom_captures = {
       -- ["<capture group>"] = "<hi group>",
       --["field"] = "TSComment",

@@ -7,6 +7,7 @@ null_ls.setup({
     -- actions.shellcheck,
     actions.gitsigns,
     -- actions.ltrs,
+    diagnostics.buf,
     -- diagnostics.ltrs,
     diagnostics.cmake_lint,
     diagnostics.cppcheck.with({
@@ -20,6 +21,7 @@ null_ls.setup({
     -- diagnostics.shellcheck,
     diagnostics.markdownlint,
     diagnostics.selene,
+    formatting.buf,
     formatting.cmake_format,
     formatting.stylua,
     formatting.black,

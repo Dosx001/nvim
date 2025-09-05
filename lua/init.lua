@@ -31,7 +31,7 @@ require("lazy").setup({
     "Exafunction/codeium.vim",
     {
       "mattn/emmet-vim",
-      ft = { "html", "typescriptreact" },
+      ft = { "html", "typescriptreact", "markdown" },
     },
     {
       "iamcco/markdown-preview.nvim",
@@ -73,6 +73,7 @@ require("lazy").setup({
     {
       "numToStr/Comment.nvim",
       config = function()
+        require("Comment.ft").spec = "#%s"
         require("Comment").setup({
           pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
         })

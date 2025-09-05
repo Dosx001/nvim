@@ -119,7 +119,7 @@ fun! g:CtrlK()
   let ft = expand('%:e')
   if ft ==? 'py'
     execute 'Py'
-  elseif ft =~? 'html\|jsx\|tsx'
+  elseif ft =~? 'html\|jsx\|tsx\|md'
     call cursor(line('.'), len(getline('.')))
     call emmet#expandAbbr(3,'')
   elseif ft ==? 'ts'
@@ -182,6 +182,11 @@ hi DiffChange gui=none guifg=Black guibg=#c19c00
 hi DiffDelete gui=none guifg=Black guibg=#870000
 hi DiffText gui=none guifg=Black guibg=#5f005f
 
+hi @comment.error.comment guifg=Black guibg=Red
+hi @comment.warning.comment guifg=Black guibg=Orange
+hi @comment.note.comment guifg=Black guibg=White
+hi @comment.todo.comment guifg=Black guibg=Yellow
+
 "set wildmenu
 "hi WildMenu ctermbg=black
 
@@ -222,6 +227,18 @@ lua require("init")
 
 " Markdown Preview
 let g:mkdp_open_ip = 'localhost'
+function! MdpOpenPreview(url) abort
+	let l:mdp_browser = '/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe'
+	let l:mdp_browser_opts = '--new-window'
+	if !filereadable(substitute(l:mdp_browser, '\\ ', ' ', 'g'))
+		let l:mdp_browser = '/mnt/c/Program\ Files\ \(x86\)/Microsoft/Edge/Application/msedge.exe'
+		let l:mdp_browser_opts = '--new-window'
+	endif
+	execute join(['silent! !', l:mdp_browser, l:mdp_browser_opts, a:url])
+	redraw!
+endfunction
+
+let g:mkdp_browserfunc = 'MdpOpenPreview'
 
 " Sneak
 map s s
@@ -241,8 +258,8 @@ let g:surround_{115} = "~~\r~~" " s
 " System Copy
 if system('uname -r | grep WSL')
   let g:system_copy#copy_command='/mnt/c/Windows/System32/clip.exe'
-  let g:system_copy#paste_command='powershell.exe -NoProfile -command Get-Clipboard'
-  let g:netrw_browsex_viewer='cmd.exe /C start'
+  let g:system_copy#paste_command='/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe -NoProfile -command Get-Clipboard'
+  let g:netrw_browsex_viewer='/mnt/c/Windows/System32/cmd.exe /C start'
 endif
 
 " Dail

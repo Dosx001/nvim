@@ -9,8 +9,8 @@ return {
       pattern = "github.com_*.txt",
       cmd = "set filetype=markdown",
     })
-    vim.g.firenvim_config = {
-      localSettings = {},
-    }
+    -- vim.g.firenvim_config = {
+    --   localSettings = {},
+    -- }
   end,
 }
