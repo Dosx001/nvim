@@ -47,7 +47,8 @@ for _, lsp in pairs({
   "vimls",
   "zls",
 }) do
-  require("lspconfig")[lsp].setup({
+  vim.lsp.enable(lsp)
+  vim.lsp.config(lsp, {
     capabilities = capabilities,
     on_attach = function(client)
       if contain({ "html", "jsonls" }, client.name) then
@@ -65,9 +66,8 @@ local runtime_path = vim.split(package.path, ";")
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
-local lspconfig = require("lspconfig")
-
-lspconfig.lua_ls.setup({
+vim.lsp.enable("lua_ls")
+vim.lsp.config("lua_ls", {
   capabilities = capabilities,
   cmd = { lua_ls, "-E", vim.fn.fnamemodify(lua_ls, ":h:h:h") .. "/main.lua" },
   settings = {
@@ -89,7 +89,8 @@ lspconfig.lua_ls.setup({
   },
 })
 
-lspconfig.cssls.setup({
+vim.lsp.enable("cssls")
+vim.lsp.config("cssls", {
   capabilities = capabilities,
   init_options = {
     provideFormatter = false,
@@ -103,7 +104,8 @@ lspconfig.cssls.setup({
   },
 })
 
-lspconfig.rust_analyzer.setup({
+vim.lsp.enable("rust_analyzer")
+vim.lsp.config("rust_analyzer", {
   capabilities = capabilities,
   on_attach = disalbeFormatting,
   settings = {
