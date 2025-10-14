@@ -31,7 +31,7 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
 end
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
-capabilities.textDocument.colorProvider = {
+capabilities.textDocument.documentColor = {
   dynamicRegistration = true,
 }
 
