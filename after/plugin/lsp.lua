@@ -43,6 +43,7 @@ for _, lsp in pairs({
   "jsonls",
   "prismals",
   "pyright",
+  "rust_analyzer",
   "tailwindcss",
   "vimls",
   "zls",
@@ -99,32 +100,6 @@ vim.lsp.config("cssls", {
     scss = {
       lint = {
         unknownAtRules = "ignore",
-      },
-    },
-  },
-})
-
-vim.lsp.enable("rust_analyzer")
-vim.lsp.config("rust_analyzer", {
-  capabilities = capabilities,
-  on_attach = disalbeFormatting,
-  settings = {
-    ["rust-analyzer"] = {
-      -- assist = {
-      --   importMergeBehavior = "last",
-      --   importPrefix = "by_self",
-      -- },
-      -- diagnostics = {
-      --   disabled = { "unresolved-import" }
-      -- },
-      -- cargo = {
-      --     loadOutDirsFromCheck = true
-      -- },
-      -- procMacro = {
-      --     enable = true
-      -- },
-      checkOnSave = {
-        command = "clippy",
       },
     },
   },
