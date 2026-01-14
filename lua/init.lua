@@ -89,9 +89,11 @@ require("lazy").setup({
     },
     {
       "nvim-treesitter/nvim-treesitter",
+      lazy = false,
       build = ":TSUpdate",
       dependencies = {
-        "nvim-treesitter/nvim-treesitter-textobjects",
+        { "nvim-treesitter/nvim-treesitter-textobjects", branch = "main" },
+        "MeanderingProgrammer/treesitter-modules.nvim",
         "nvim-treesitter/nvim-treesitter-context",
         "HiPhish/rainbow-delimiters.nvim",
         "JoosepAlviste/nvim-ts-context-commentstring",
