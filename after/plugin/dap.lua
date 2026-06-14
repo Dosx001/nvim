@@ -9,8 +9,8 @@ dapui.setup({
         "stacks",
         "watches",
       },
-      size = 40,
-      position = "left",
+      size = 0.3,
+      position = "right",
     },
     {
       elements = {
@@ -107,3 +107,31 @@ dap.configurations.python = {
     end,
   },
 }
+
+vim.keymap.set("n", "<F1>", dap.continue)
+vim.keymap.set("n", "<F2>", dap.step_into)
+vim.keymap.set("n", "<F3>", dap.step_over)
+vim.keymap.set("n", "<F4>", dap.step_out)
+vim.keymap.set("n", "<F5>", dap.step_back)
+vim.keymap.set("n", "<F6>", dap.restart)
+vim.keymap.set("n", "<F7>", dap.pause)
+vim.keymap.set("n", "<F8>", dap.terminate)
+
+vim.keymap.set("n", "<leader>dl", dap.goto_)
+vim.keymap.set("n", "<leader>do", dapui.toggle)
+vim.keymap.set("n", "<leader>dr", dap.run_to_cursor)
+vim.keymap.set("n", "<leader>dR", dap.run_last)
+vim.keymap.set("n", "<leader>dc", function()
+  vim.keymap.setap.set_breakpoint(vim.fn.input("Condition: "))
+end)
+
+local widgets = require("dap.ui.widgets")
+vim.keymap.set("n", "<leader>dh", widgets.hover)
+vim.keymap.set("n", "<leader>ds", function()
+  widgets.centered_float(widgets.scopes)
+end)
+
+local dap_python = require("dap-python")
+vim.keymap.set("n", "<leader>dpc", dap_python.test_class)
+vim.keymap.set("n", "<leader>dpm", dap_python.test_method)
+vim.keymap.set("n", "<leader>dps", dap_python.debug_selection)

@@ -102,8 +102,8 @@ ino <C-h> <C-x><C-k>
 ino <expr><Esc> col('.') == 1 ? "\<Esc>" : "\<Esc>l"
 nno <F11> :Lazy! load 
 nno <F12> :Lazy<CR>
-nno <F5> :!<CR><CR>
-ino <F5> <Esc>:!<CR><CR>
+nno <F9> :!<CR><CR>
+ino <F9> <Esc>:!<CR><CR>
 nno <C-p> $p
 nno <C-s> :w<CR>
 ino <C-s> <Esc>:w<CR>
@@ -300,21 +300,3 @@ map <leader>zs <cmd>Telescope git_status<CR>
 map <leader>zo <cmd>lua require("oil").open()<CR>
 map <leader>ze :e 
 map <leader>zE :Ex<CR>
-
-" DAP
-map <F1> <cmd>lua require("dap").step_into()<CR>
-map <F2> <cmd>lua require("dap").step_over()<CR>
-map <F3> <cmd>lua require("dap").step_out()<CR>
-map <F4> <cmd>lua require("dap").continue()<CR>
-map <F8> <cmd>lua require("dap").pause()<CR>
-map <F7> <cmd>lua require("dap").terminate()<CR>
-map <leader>dc <cmd>lua require("dap").set_breakpoint(vim.fn.input("Condition: "))<CR>
-map <leader>dr <cmd>lua require("dap").run_to_cursor()<CR>
-map <leader>dR <cmd>lua require("dap").run_last()<CR>
-map <leader>dh <cmd>lua require("dap.ui.widgets").hover()<CR>
-map <leader>ds <cmd>lua require("dap.ui.widgets").scopes()<CR>
-map <leader>dl <cmd>lua require("dap").goto_()<CR>
-
-map <leader>dpm <cmd>lua require('dap-python').test_method()<CR>
-map <leader>dpc <cmd>lua require('dap-python').test_class()<CR>
-map <leader>dps <cmd>lua require('dap-python').debug_selection()<CR>
