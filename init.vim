@@ -248,6 +248,8 @@ endif
 " Dail
 nmap  <A-a>  <Plug>(dial-increment)
 vmap  <A-a>  <Plug>(dial-increment)
+nmap  <A-x>  <Plug>(dial-decrement)
+vmap  <A-x>  <Plug>(dial-decrement)
 
 " Nvim TS Rainbow
 hi link @variable Normal
