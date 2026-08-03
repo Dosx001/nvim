@@ -121,3 +121,26 @@ vim.diagnostic.config({
     },
   },
 })
+
+vim.keymap.set("v", "e", vim.lsp.buf.format)
+vim.keymap.set("n", "<leader>e", vim.lsp.buf.format)
+vim.keymap.set("n", "<leader>R", vim.lsp.buf.rename)
+vim.keymap.set("n", "<C-f>", vim.diagnostic.open_float)
+vim.keymap.set("n", "<A-}>", function()
+  vim.diagnostic.jump({
+    count = 1,
+    on_jump = vim.lsp.buf.hover,
+  })
+end)
+vim.keymap.set("n", "<A-{>", function()
+  vim.diagnostic.jump({
+    count = -1,
+    on_jump = vim.lsp.buf.hover,
+  })
+end)
+vim.keymap.set("n", "<leader>E", function()
+  vim.lsp.buf.format({ async = true })
+end)
+vim.keymap.set("n", "<leader>h", function()
+  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end)
