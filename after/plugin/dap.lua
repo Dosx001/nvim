@@ -122,7 +122,7 @@ vim.keymap.set("n", "<leader>do", dapui.toggle)
 vim.keymap.set("n", "<leader>dr", dap.run_to_cursor)
 vim.keymap.set("n", "<leader>dR", dap.run_last)
 vim.keymap.set("n", "<leader>dc", function()
-  vim.keymap.setap.set_breakpoint(vim.fn.input("Condition: "))
+  dap.set_breakpoint(vim.fn.input("Condition: "))
 end)
 
 local widgets = require("dap.ui.widgets")
