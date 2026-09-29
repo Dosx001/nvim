@@ -1,12 +1,3 @@
-local function contain(tab, val)
-  for _, value in ipairs(tab) do
-    if value == val then
-      return true
-    end
-  end
-  return false
-end
-
 local function disalbeFormatting(client)
   client.server_capabilities.document_formatting = false
   client.server_capabilities.document_range_formatting = false
@@ -52,7 +43,7 @@ for _, lsp in pairs({
   vim.lsp.config(lsp, {
     capabilities = capabilities,
     on_attach = function(client)
-      if contain({ "html", "jsonls" }, client.name) then
+      if vim.tbl_contains({ "html", "jsonls" }, client.name) then
         disalbeFormatting(client)
       end
       if client.server_capabilities.colorProvider then
